@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+
+<title>Goslinks</title>
+
+<p>The links are:<p>
+<ul>
+    {% for link in links %}
+        <li><a href="{{ link.url }}">{{ link.slug }}</a> (owned by {{ link.owner_user.email }})</li>
+    {% endfor %}
+</ul>
