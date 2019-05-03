@@ -6,6 +6,6 @@ from .db import LinkModel
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route("/")
 def links():
-    return render_template('links.html', links=LinkModel.scan())
+    return render_template("links.html", links=LinkModel.scan())
