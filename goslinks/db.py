@@ -10,6 +10,21 @@ class UserModel(Model):
         write_capacity_units = 1
 
     email = UnicodeAttribute(hash_key=True)
+    name = UnicodeAttribute()
+    photo = UnicodeAttribute()
+
+    @classmethod
+    def update_or_create_user(cls, user_info):
+        email = user_info["email"]
+        try:
+            user = cls.get(email)
+        except cls.DoesNotExist:
+            user = cls(email)
+
+        user.name = user_info["name"]
+        user.photo = user_info["picture"]
+        user.save()
+        return user
 
 
 class LinkModel(Model):

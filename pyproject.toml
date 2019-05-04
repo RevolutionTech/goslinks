@@ -9,6 +9,7 @@ license = "ISC"
 python = "^3.6"
 Flask = "^1.0"
 pynamodb = "^3.3"
+python-dotenv = "^0.10.1"
 
 [tool.poetry.dev-dependencies]
 black = {version = "^18.3-alpha.0",allows-prereleases = true}
