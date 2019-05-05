@@ -1,7 +1,7 @@
 from authlib.client import OAuth2Session
 from flask import Blueprint, current_app, make_response, redirect, request, session
 
-from goslinks.db import UserModel
+from goslinks.db.models import UserModel
 from .constants import (
     ACCESS_TOKEN_URI,
     AUTHORIZATION_URL,

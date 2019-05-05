@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 
-from .db import LinkModel
+from .db.models import LinkModel
 from .google_oauth2.app import app as google_auth_app
 from .google_oauth2.utils import logged_in_user
 

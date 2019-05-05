@@ -1,4 +1,4 @@
-from goslinks.db import LinkModel, UserModel
+from goslinks.db.models import LinkModel, UserModel
 
 
 def run():

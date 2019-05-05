@@ -2,7 +2,7 @@ import google.oauth2.credentials
 import googleapiclient.discovery
 from flask import current_app, session
 
-from goslinks.db import UserModel
+from goslinks.db.models import UserModel
 from .constants import ACCESS_TOKEN_URI, AUTH_EMAIL, AUTH_TOKEN_KEY
 
 
