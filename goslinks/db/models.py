@@ -56,3 +56,9 @@ class LinkModel(Model):
             )
 
         return UserModel.get(self.owner)
+
+
+MODEL_REGISTRY = {
+    "user": UserModel,
+    "link": LinkModel,
+}

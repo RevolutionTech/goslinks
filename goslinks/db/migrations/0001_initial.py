@@ -1,9 +1,9 @@
-from goslinks.db.factory import model_factory
+from goslinks.db.factory import get_model
 
 
 def run():
     for model_name in ("user", "link"):
-        model_factory(model_name).create_table()
+        get_model(model_name).create_table()
 
 
 if __name__ == "__main__":

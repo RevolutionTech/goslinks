@@ -4,7 +4,7 @@ from goslinks.blueprints import BLUEPRINTS
 from goslinks.config import Config
 
 
-def create_app(config):
+def create_flask_app(config):
     app = Flask(__name__)
     app.config.from_object(config)
     for bp in BLUEPRINTS:
@@ -12,4 +12,4 @@ def create_app(config):
     return app
 
 
-app = create_app(Config)
+app = create_flask_app(Config)
