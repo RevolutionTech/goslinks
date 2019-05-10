@@ -2,14 +2,14 @@ import google.oauth2.credentials
 import googleapiclient.discovery
 from flask import current_app, session
 
-from goslinks.db.models import UserModel
+from goslinks.db.factory import model_factory
 from goslinks.google_oauth2.constants import ACCESS_TOKEN_URI, AUTH_EMAIL, AUTH_TOKEN_KEY
 
 
 def logged_in_user():
     email = session.get(AUTH_EMAIL)
     if email:
-        return UserModel.get(email)
+        return model_factory("user").get(email)
 
 
 def build_credentials():

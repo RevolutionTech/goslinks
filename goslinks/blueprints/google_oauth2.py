@@ -1,7 +1,7 @@
 from authlib.client import OAuth2Session
 from flask import Blueprint, current_app, make_response, redirect, request, session
 
-from goslinks.db.models import UserModel
+from goslinks.db.factory import model_factory
 from goslinks.google_oauth2.constants import (
     ACCESS_TOKEN_URI,
     AUTHORIZATION_URL,
@@ -66,7 +66,7 @@ def google_auth_redirect():
         )
         return response
 
-    user = UserModel.update_or_create_user(user_info)
+    user = model_factory("user").update_or_create_user(user_info)
     session[AUTH_EMAIL] = user.email
     return redirect(config["GOOGLE_OAUTH2_BASE_URI"], code=302)
 
