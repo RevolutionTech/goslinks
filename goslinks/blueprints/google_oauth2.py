@@ -2,7 +2,7 @@ from authlib.client import OAuth2Session
 from flask import Blueprint, current_app, make_response, redirect, request, session
 
 from goslinks.db.models import UserModel
-from .constants import (
+from goslinks.google_oauth2.constants import (
     ACCESS_TOKEN_URI,
     AUTHORIZATION_URL,
     AUTHORIZATION_SCOPE,
@@ -10,13 +10,13 @@ from .constants import (
     AUTH_TOKEN_KEY,
     AUTH_STATE_KEY,
 )
-from .decorators import no_cache
-from .utils import get_user_info
+from goslinks.google_oauth2.decorators import no_cache
+from goslinks.google_oauth2.utils import get_user_info
 
-app = Blueprint("google_oauth2", __name__)
+bp = Blueprint("google_oauth2", __name__)
 
 
-@app.route("/login/google")
+@bp.route("/login/google")
 @no_cache
 def login():
     config = current_app.config
@@ -35,7 +35,7 @@ def login():
     return redirect(uri, code=302)
 
 
-@app.route("/login/google/complete")
+@bp.route("/login/google/complete")
 @no_cache
 def google_auth_redirect():
     req_state = request.args.get("state", default=None, type=None)
@@ -71,7 +71,7 @@ def google_auth_redirect():
     return redirect(config["GOOGLE_OAUTH2_BASE_URI"], code=302)
 
 
-@app.route("/logout/google")
+@bp.route("/logout/google")
 @no_cache
 def logout():
     session.pop(AUTH_EMAIL, None)
