@@ -1,8 +1,7 @@
 from pynamodb.attributes import UnicodeAttribute
-from pynamodb.models import Model
 
 
-class UserModel(Model):
+class UserModel(object):
     class Meta:
         table_name = "Users"
         host = "http://localhost:8000"
@@ -27,7 +26,7 @@ class UserModel(Model):
         return user
 
 
-class LinkModel(Model):
+class LinkModel(object):
     class Meta:
         table_name = "Links"
         host = "http://localhost:8000"
