@@ -35,3 +35,8 @@ def get_model(name):
     except KeyError:
         raise ModelNotRegistered(f"No model registered by name {name}")
     return create_model_class(model_mixin)
+
+
+def get_models():
+    for name in MODEL_REGISTRY:
+        yield get_model(name)

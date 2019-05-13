@@ -14,3 +14,9 @@ class Config(object):
     GOOGLE_OAUTH2_AUTH_REDIRECT_URI = f"{GOOGLE_OAUTH2_BASE_URI}/login/google/complete"
     GOOGLE_OAUTH2_CLIENT_ID = os.environ["GOSLINKS_GOOGLE_OAUTH2_CLIENT_ID"]
     GOOGLE_OAUTH2_CLIENT_SECRET = os.environ["GOSLINKS_GOOGLE_OAUTH2_CLIENT_SECRET"]
+
+
+class TestingConfig(Config):
+    TESTING = True
+
+    MODEL_BASE_CLASS = "test.fake_pynamodb.FakeModel"
