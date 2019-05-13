@@ -50,12 +50,14 @@ class LinkModel(Model):
 
     @property
     def owner_user(self):
+        from goslinks.db.factory import get_model
+
         if not self.owner.endswith(self.organization):
             raise AssertionError(
                 "Owner does not belong to the organization this link is contained in"
             )
 
-        return UserModel.get(self.owner)
+        return get_model("user").get(self.owner)
 
 
 MODEL_REGISTRY = {"user": UserModel, "link": LinkModel}
