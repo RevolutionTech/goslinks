@@ -10,7 +10,7 @@ def migrate():
     """Creates and migrates database tables."""
     for model_name in ("user", "link"):
         model = get_model(model_name)
-        click.echo(f"Creating table {model_name}... ", nl=False)
+        click.echo(f"Creating table {model.Meta.table_name}... ", nl=False)
         try:
             model.create_table()
         except Exception:
