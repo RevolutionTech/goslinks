@@ -9,9 +9,10 @@ from goslinks.db.factory import get_model
 def migrate():
     """Creates and migrates database tables."""
     for model_name in ("user", "link"):
+        model = get_model(model_name)
         click.echo(f"Creating table {model_name}... ", nl=False)
         try:
-            get_model(model_name).create_table()
+            model.create_table()
         except Exception:
             click.echo(click.style("FAILED!", fg="red"))
             raise
