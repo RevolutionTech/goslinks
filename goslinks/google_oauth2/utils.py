@@ -3,7 +3,11 @@ import googleapiclient.discovery
 from flask import current_app, session
 
 from goslinks.db.factory import get_model
-from goslinks.google_oauth2.constants import ACCESS_TOKEN_URI, AUTH_EMAIL, AUTH_TOKEN_KEY
+from goslinks.google_oauth2.constants import (
+    ACCESS_TOKEN_URI,
+    AUTH_EMAIL,
+    AUTH_TOKEN_KEY,
+)
 
 
 def logged_in_user():
