@@ -1,0 +1,18 @@
+dist: xenial
+language: python
+python:
+  - 3.6
+
+before_install:
+  - pip install poetry
+install:
+  - poetry install
+
+before_script:
+  - cp .env-sample .env
+
+script:
+  - poetry run coverage run -m unittest
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
