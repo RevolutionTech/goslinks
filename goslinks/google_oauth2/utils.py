@@ -1,10 +1,12 @@
 import google.oauth2.credentials
 import googleapiclient.discovery
+from authlib.client import OAuth2Session
 from flask import current_app, session
 
 from goslinks.db.factory import get_model
 from goslinks.google_oauth2.constants import (
     ACCESS_TOKEN_URI,
+    AUTHORIZATION_SCOPE,
     AUTH_EMAIL,
     AUTH_TOKEN_KEY,
 )
@@ -14,6 +16,17 @@ def logged_in_user():
     email = session.get(AUTH_EMAIL)
     if email:
         return get_model("user").get(email)
+
+
+def build_oauth2_session(state=None):
+    config = current_app.config
+    return OAuth2Session(
+        config["GOOGLE_OAUTH2_CLIENT_ID"],
+        config["GOOGLE_OAUTH2_CLIENT_SECRET"],
+        scope=AUTHORIZATION_SCOPE,
+        state=state,
+        redirect_uri=config["GOOGLE_OAUTH2_AUTH_REDIRECT_URI"],
+    )
 
 
 def build_credentials():

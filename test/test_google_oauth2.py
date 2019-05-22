@@ -5,6 +5,7 @@ from flask import session
 from goslinks.google_oauth2.decorators import no_cache
 from goslinks.google_oauth2.utils import (
     logged_in_user,
+    build_oauth2_session,
     build_credentials,
     get_user_info,
 )
@@ -47,6 +48,34 @@ class LoggedInUserTestCase(AppTestCase):
 
     def test_logged_in_user_returns_none_if_unauthenticated(self):
         self.assertIsNone(logged_in_user())
+
+
+class BuildOAuth2SessionTestCase(AppTestCase):
+    @mock.patch("goslinks.google_oauth2.utils.OAuth2Session")
+    def test_build_oauth2_session(self, mock_oauth2_session):
+        google_oauth2_state = "GOOGLE_OAUTH2_STATE"
+        oauth2_session_mock = mock.Mock()
+        mock_oauth2_session.return_value = oauth2_session_mock
+
+        self.assertEqual(build_oauth2_session(google_oauth2_state), oauth2_session_mock)
+        mock_oauth2_session.assert_called_once_with(
+            "GOOGLE_OAUTH2_CLIENT_ID",
+            "GOOGLE_OAUTH2_CLIENT_SECRET",
+            scope="openid email profile",
+            state=google_oauth2_state,
+            redirect_uri="http://GOOGLE_OAUTH2_AUTH_REDIRECT_URI",
+        )
+
+    @mock.patch("goslinks.google_oauth2.utils.OAuth2Session")
+    def test_build_oauth2_session_without_scope(self, mock_oauth2_session):
+        build_oauth2_session()
+        mock_oauth2_session.assert_called_once_with(
+            "GOOGLE_OAUTH2_CLIENT_ID",
+            "GOOGLE_OAUTH2_CLIENT_SECRET",
+            scope="openid email profile",
+            state=None,
+            redirect_uri="http://GOOGLE_OAUTH2_AUTH_REDIRECT_URI",
+        )
 
 
 class BuildCredentialsTestCase(AppTestCase):
