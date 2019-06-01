@@ -18,6 +18,7 @@ class Config(object):
 
 class TestingConfig(Config):
     TESTING = True
+    PRESERVE_CONTEXT_ON_EXCEPTION = False
 
     MODEL_BASE_CLASS = "test.fake_pynamodb.FakeModel"
 
