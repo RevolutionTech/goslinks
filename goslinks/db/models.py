@@ -12,6 +12,11 @@ class UserModel(object):
     name = UnicodeAttribute()
     photo = UnicodeAttribute()
 
+    @property
+    def organization(self):
+        _, o = self.email.split("@")
+        return o
+
     @classmethod
     def update_or_create_user(cls, user_info):
         email = user_info["email"]
@@ -36,6 +41,26 @@ class LinkModel(object):
     name = UnicodeAttribute(hash_key=True)  # contains organization name and link name
     url = UnicodeAttribute()
     owner = UnicodeAttribute()
+
+    @staticmethod
+    def name_from_organization_and_slug(organization, slug):
+        return f"{organization}|{slug}"
+
+    @classmethod
+    def get_from_organization_and_slug(cls, organization, slug, **kwargs):
+        name = cls.name_from_organization_and_slug(organization, slug)
+        return cls.get(hash_key=name, **kwargs)
+
+    @classmethod
+    def get_or_init(cls, user, slug):
+        name = cls.name_from_organization_and_slug(user.organization, slug)
+        try:
+            link = cls.get(name)
+        except cls.DoesNotExist:
+            link = cls(name=name)
+
+        link.owner = user.email
+        return link
 
     @property
     def organization(self):

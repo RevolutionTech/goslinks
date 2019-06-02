@@ -1,8 +1,6 @@
 from http import HTTPStatus
 from unittest import mock
 
-from flask import session
-
 from test.app_test_case import AppTestCase
 
 

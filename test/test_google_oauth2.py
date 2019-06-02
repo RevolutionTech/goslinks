@@ -1,8 +1,9 @@
+from http import HTTPStatus
 from unittest import mock
 
 from flask import session
 
-from goslinks.google_oauth2.decorators import no_cache
+from goslinks.google_oauth2.decorators import no_cache, login_required
 from goslinks.google_oauth2.utils import (
     logged_in_user,
     build_oauth2_session,
@@ -36,6 +37,31 @@ class NoCacheDecoratorTestCase(SimpleTestCase):
 
         for header in self.CACHE_HEADERS:
             self.assertIn(header, response.headers)
+
+
+class LoginRequiredDecoratorTestCase(AppTestCase):
+    def test_login_required_redirects_unauthenticated_user(self):
+        @self.app.route("/hello/")
+        @login_required
+        def hello():
+            return "Hello World!"
+
+        response = self.client.get("/hello/")
+        self.assertStatus(response, HTTPStatus.FOUND)
+        self.assertRedirects(response, "/login/google")
+
+    def test_login_required_allows_authenticated_user(self):
+        @self.app.route("/hello/")
+        @login_required
+        def hello():
+            return "Hello World!"
+
+        user = self.create_user()
+        with self.client.session_transaction() as sess:
+            sess["auth_email"] = user.email
+
+        response = self.client.get("/hello/")
+        self.assertStatus(response, HTTPStatus.OK)
 
 
 class LoggedInUserTestCase(AppTestCase):
