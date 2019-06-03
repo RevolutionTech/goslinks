@@ -9,6 +9,7 @@ class Config(object):
     SECRET_KEY = os.environ["GOSLINKS_SECRET_KEY"]
 
     MODEL_BASE_CLASS = "pynamodb.models.Model"
+    MODEL_DYNAMODB_HOST = os.environ["GOSLINKS_MODEL_DYNAMODB_HOST"]
 
     GOOGLE_OAUTH2_BASE_URI = os.environ["GOSLINKS_GOOGLE_OAUTH2_BASE_URI"]
     GOOGLE_OAUTH2_AUTH_REDIRECT_URI = f"{GOOGLE_OAUTH2_BASE_URI}/login/google/complete"

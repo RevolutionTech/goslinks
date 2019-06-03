@@ -18,8 +18,13 @@ def get_model_base_class():
 
 
 def create_model_class(model_mixin):
+    model_mixin_meta_attrs = {}
+    model_dynamodb_host = current_app.config["MODEL_DYNAMODB_HOST"]
+    if model_dynamodb_host:
+        model_mixin_meta_attrs["host"] = model_dynamodb_host
+
     model_base_class = get_model_base_class()
-    model_mixin_meta = type("Meta", (model_mixin.Meta,), {})
+    model_mixin_meta = type("Meta", (model_mixin.Meta,), model_mixin_meta_attrs)
     model = type(
         model_mixin.__name__,
         (model_mixin, model_base_class),
