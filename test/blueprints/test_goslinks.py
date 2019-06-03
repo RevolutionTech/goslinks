@@ -64,14 +64,14 @@ class GoslinkEditTestCase(AppTestCase):
 
 class GoslinkRedirectTestCase(AppTestCase):
     def test_goslink_redirect_requires_authentication(self):
-        response = self.client.get("/foo")
+        response = self.client.get("/foo/")
         self.assertStatus(response, HTTPStatus.FOUND)
         self.assertRedirects(response, "/login/google")
 
     def test_goslink_redirect_to_edit_page_with_new_slug(self):
         self.login()
 
-        response = self.client.get("/foo")
+        response = self.client.get("/foo/")
         self.assertStatus(response, HTTPStatus.FOUND)
         self.assertRedirects(response, "/edit/foo")
 
@@ -79,6 +79,6 @@ class GoslinkRedirectTestCase(AppTestCase):
         link = self.create_link()
         self.login(link.owner)
 
-        response = self.client.get(f"/{link.slug}")
+        response = self.client.get(f"/{link.slug}/")
         self.assertStatus(response, HTTPStatus.FOUND)
         self.assertRedirects(response, link.url)
