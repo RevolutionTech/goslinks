@@ -31,7 +31,7 @@ def edit(slug):
         link.url = form.data["url"]
         link.save()
         return redirect(url_for(".goslink_redirect", slug=new_slug))
-    return render_template("edit.html", form=form)
+    return render_template("edit.html", link=link, form=form)
 
 
 @bp.route("/<slug>/")

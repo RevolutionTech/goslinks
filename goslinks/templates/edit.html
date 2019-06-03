@@ -2,6 +2,15 @@
 
 <title>Goslinks</title>
 
+<nav>
+    <a href="{{ url_for('google_oauth2.logout') }}">Logout</a>
+</nav>
+
+<h2>
+    {% if link.url %}Update existing link{% else %}Create a new link{% endif %}
+    {%- if link.slug %}: {{ link.slug }}{% endif %}
+</h2>
+
 <form method="POST">
     {{ form.csrf_token }}
 
