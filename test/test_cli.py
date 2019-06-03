@@ -23,7 +23,7 @@ class MigrateTestCase(SimpleTestCase):
         self.assertEqual(result.exit_code, 0)
         self.assertEqual(
             result.output,
-            "Creating table Users... SUCCESS!\nCreating table Links... SUCCESS!\n",
+            "Creating table goslinks-users... SUCCESS!\nCreating table goslinks-links... SUCCESS!\n",
         )
 
         self.assertTrue(user_model.exists())
@@ -32,11 +32,11 @@ class MigrateTestCase(SimpleTestCase):
     @mock.patch(
         "goslinks.cli.get_model",
         return_value=mock.Mock(
-            Meta=mock.Mock(table_name="Users"),
+            Meta=mock.Mock(table_name="goslinks-users"),
             create_table=mock.Mock(side_effect=ValueError),
         ),
     )
     def test_migrate_outputs_failed_on_failure(self, mock_get_model):
         result = self.runner.invoke(migrate)
         self.assertEqual(result.exit_code, 1)
-        self.assertEqual(result.output, "Creating table Users... FAILED!\n")
+        self.assertEqual(result.output, "Creating table goslinks-users... FAILED!\n")
