@@ -4,6 +4,19 @@ from goslinks.db.factory import get_model
 from test.app_test_case import AppTestCase
 
 
+class HomeTestCase(AppTestCase):
+    def test_unauthenticated_user_renders_home(self):
+        response = self.client.get("/")
+        self.assertStatus(response, HTTPStatus.OK)
+
+    def test_authenticated_user_redirects_to_edit(self):
+        self.login()
+
+        response = self.client.get("/")
+        self.assertStatus(response, HTTPStatus.FOUND)
+        self.assertRedirects(response, "/edit/")
+
+
 class GoslinkEditTestCase(AppTestCase):
     def test_edit_requires_authentication(self):
         response = self.client.get("/edit/foo")

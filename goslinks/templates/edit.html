@@ -3,7 +3,7 @@
 <title>Goslinks</title>
 
 <nav>
-    <a href="{{ url_for('google_oauth2.logout') }}">Logout</a>
+    Not {{ user.name }}? <a href="{{ url_for('google_oauth2.logout') }}">Logout</a>
 </nav>
 
 <h2>

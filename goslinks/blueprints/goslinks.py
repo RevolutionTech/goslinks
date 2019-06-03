@@ -9,9 +9,12 @@ bp = Blueprint("goslinks", __name__)
 
 
 @bp.route("/")
-def links():
+def home():
     user = logged_in_user()
-    return render_template("links.html", user=user, links=get_model("link").scan())
+    if user:
+        return redirect(url_for(".edit"))
+    else:
+        return render_template("home.html")
 
 
 @bp.route("/edit/", defaults={"slug": ""})
@@ -31,7 +34,7 @@ def edit(slug):
         link.url = form.data["url"]
         link.save()
         return redirect(url_for(".goslink_redirect", slug=new_slug))
-    return render_template("edit.html", link=link, form=form)
+    return render_template("edit.html", user=user, link=link, form=form)
 
 
 @bp.route("/<slug>/")
