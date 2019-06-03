@@ -17,7 +17,7 @@ def home():
         return render_template("home.html")
 
 
-@bp.route("/edit/", defaults={"slug": ""})
+@bp.route("/edit/", defaults={"slug": ""}, methods=("GET", "POST"))
 @bp.route("/edit/<slug>", methods=("GET", "POST"))
 @login_required
 def edit(slug):
