@@ -15,7 +15,12 @@ from goslinks.google_oauth2.constants import (
 def logged_in_user():
     email = session.get(AUTH_EMAIL)
     if email:
-        return get_model("user").get(email)
+        user_model = get_model("user")
+        try:
+            return user_model.get(email)
+        except user_model.DoesNotExist:
+            # User has been deleted, remove from session
+            session.pop(AUTH_EMAIL, None)
 
 
 def build_oauth2_session(state=None):

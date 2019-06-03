@@ -75,6 +75,11 @@ class LoggedInUserTestCase(AppTestCase):
     def test_logged_in_user_returns_none_if_unauthenticated(self):
         self.assertIsNone(logged_in_user())
 
+    def test_logged_in_user_returns_none_if_does_not_exist(self):
+        session["auth_email"] = self.USER_EMAIL
+        self.assertIsNone(logged_in_user())
+        self.assertNotIn("auth_email", session)
+
 
 class BuildOAuth2SessionTestCase(AppTestCase):
     @mock.patch("goslinks.google_oauth2.utils.OAuth2Session")
