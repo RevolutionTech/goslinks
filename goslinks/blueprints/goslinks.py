@@ -14,6 +14,7 @@ def links():
     return render_template("links.html", user=user, links=get_model("link").scan())
 
 
+@bp.route("/edit/", defaults={"slug": ""})
 @bp.route("/edit/<slug>", methods=("GET", "POST"))
 @login_required
 def edit(slug):
@@ -33,7 +34,7 @@ def edit(slug):
     return render_template("edit.html", form=form)
 
 
-@bp.route("/<slug>")
+@bp.route("/<slug>/")
 @login_required
 def goslink_redirect(slug):
     user = logged_in_user()
