@@ -31,10 +31,7 @@ class GoogleOAuth2RedirectTestCase(AppTestCase):
             sess["auth_state"] = self.google_oauth2_state
 
     @mock.patch("goslinks.blueprints.google_oauth2.get_model")
-    @mock.patch(
-        "goslinks.blueprints.google_oauth2.get_user_info",
-        return_value={"verified_email": True},
-    )
+    @mock.patch("goslinks.blueprints.google_oauth2.get_user_info")
     @mock.patch("goslinks.blueprints.google_oauth2.build_oauth2_session")
     def test_google_auth_redirect(
         self, mock_build_oauth2_session, mock_get_user_info, mock_get_model
@@ -46,6 +43,10 @@ class GoogleOAuth2RedirectTestCase(AppTestCase):
         mock_build_oauth2_session.return_value = mock.Mock(
             fetch_access_token=lambda url, authorization_response: oauth2_tokens
         )
+        mock_get_user_info.return_value = {
+            "verified_email": True,
+            "hd": self.ORGANIZATION_NAME,
+        }
         mock_get_model.return_value = mock.Mock(
             update_or_create_user=lambda d: mock.Mock(email=self.USER_EMAIL)
         )
@@ -82,6 +83,25 @@ class GoogleOAuth2RedirectTestCase(AppTestCase):
 
     @mock.patch("goslinks.blueprints.google_oauth2.get_user_info")
     @mock.patch("goslinks.blueprints.google_oauth2.build_oauth2_session")
+    def test_google_auth_redirect_requires_hosted_domain(
+        self, mock_build_oauth2_session, mock_get_user_info
+    ):
+        oauth2_tokens = {
+            "access_token": "OAUTH2_ACCESS_TOKEN",
+            "refresh_token": "OAUTH2_REFRESH_TOKEN",
+        }
+        mock_build_oauth2_session.return_value = mock.Mock(
+            fetch_access_token=lambda url, authorization_response: oauth2_tokens
+        )
+        mock_get_user_info.return_value = {"verified_email": True}
+
+        response = self.client.get(
+            f"/login/google/complete?state={self.google_oauth2_state}"
+        )
+        self.assertStatus(response, HTTPStatus.UNAUTHORIZED)
+
+    @mock.patch("goslinks.blueprints.google_oauth2.get_user_info")
+    @mock.patch("goslinks.blueprints.google_oauth2.build_oauth2_session")
     def test_google_auth_redirect_requires_verified_email(
         self, mock_build_oauth2_session, mock_get_user_info
     ):
@@ -92,7 +112,7 @@ class GoogleOAuth2RedirectTestCase(AppTestCase):
         mock_build_oauth2_session.return_value = mock.Mock(
             fetch_access_token=lambda url, authorization_response: oauth2_tokens
         )
-        mock_get_user_info.return_value = self.ORIGINAL_USER_INFO
+        mock_get_user_info.return_value = {"hd": self.ORGANIZATION_NAME}
 
         response = self.client.get(
             f"/login/google/complete?state={self.google_oauth2_state}"

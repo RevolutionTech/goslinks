@@ -1,4 +1,4 @@
-from flask import Blueprint, make_response, redirect, request, session
+from flask import Blueprint, make_response, redirect, render_template, request, session
 
 from goslinks.db.factory import get_model
 from goslinks.google_oauth2.constants import (
@@ -43,11 +43,8 @@ def google_auth_redirect():
 
     user_info = get_user_info()
     is_email_verified = user_info.get("verified_email", False)
-    if not is_email_verified:
-        response = make_response(
-            "Cannot authenticate a user without a verified email address.", 401
-        )
-        return response
+    if "hd" not in user_info or not is_email_verified:
+        return render_template("google_oauth2_error.html"), 401
 
     user = get_model("user").update_or_create_user(user_info)
     session[AUTH_EMAIL] = user.email
