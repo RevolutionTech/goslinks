@@ -1,7 +1,7 @@
 import google.oauth2.credentials
 import googleapiclient.discovery
 from authlib.client import OAuth2Session
-from flask import current_app, session
+from flask import current_app, request, session, url_for
 
 from goslinks.db.factory import get_model
 from goslinks.google_oauth2.constants import (
@@ -30,7 +30,7 @@ def build_oauth2_session(state=None):
         config["GOOGLE_OAUTH2_CLIENT_SECRET"],
         scope=AUTHORIZATION_SCOPE,
         state=state,
-        redirect_uri=config["GOOGLE_OAUTH2_AUTH_REDIRECT_URI"],
+        redirect_uri=url_for("google_oauth2.google_auth_redirect", _external=True),
     )
 
 

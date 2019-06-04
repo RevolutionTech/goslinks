@@ -94,7 +94,7 @@ class BuildOAuth2SessionTestCase(AppTestCase):
             "GOOGLE_OAUTH2_CLIENT_SECRET",
             scope="openid email profile",
             state=google_oauth2_state,
-            redirect_uri="http://GOOGLE_OAUTH2_AUTH_REDIRECT_URI",
+            redirect_uri="http://localhost/login/google/complete",
         )
 
     @mock.patch("goslinks.google_oauth2.utils.OAuth2Session")
@@ -105,7 +105,7 @@ class BuildOAuth2SessionTestCase(AppTestCase):
             "GOOGLE_OAUTH2_CLIENT_SECRET",
             scope="openid email profile",
             state=None,
-            redirect_uri="http://GOOGLE_OAUTH2_AUTH_REDIRECT_URI",
+            redirect_uri="http://localhost/login/google/complete",
         )
 
 

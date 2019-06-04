@@ -1,4 +1,4 @@
-from flask import Blueprint, current_app, make_response, redirect, request, session
+from flask import Blueprint, make_response, redirect, request, session
 
 from goslinks.db.factory import get_model
 from goslinks.google_oauth2.constants import (
@@ -51,7 +51,7 @@ def google_auth_redirect():
 
     user = get_model("user").update_or_create_user(user_info)
     session[AUTH_EMAIL] = user.email
-    return redirect(current_app.config["GOOGLE_OAUTH2_BASE_URI"], code=302)
+    return redirect("/", code=302)
 
 
 @bp.route("/logout/google")
@@ -60,6 +60,4 @@ def logout():
     session.pop(AUTH_EMAIL, None)
     session.pop(AUTH_TOKEN_KEY, None)
     session.pop(AUTH_STATE_KEY, None)
-
-    config = current_app.config
-    return redirect(config["GOOGLE_OAUTH2_BASE_URI"], code=302)
+    return redirect("/", code=302)

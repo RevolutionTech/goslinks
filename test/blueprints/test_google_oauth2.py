@@ -61,7 +61,7 @@ class GoogleOAuth2RedirectTestCase(AppTestCase):
             self.assertEqual(sess["auth_token"], oauth2_tokens)
             self.assertEqual(sess["auth_email"], self.USER_EMAIL)
         self.assertStatus(response, HTTPStatus.FOUND)
-        self.assertRedirects(response, "http://GOOGLE_OAUTH2_BASE_URI")
+        self.assertRedirects(response, "/")
 
     def test_google_auth_redirect_requires_state_in_session(self):
         with self.client.session_transaction() as sess:
@@ -116,4 +116,4 @@ class GoogleOAuth2LogoutTestCase(AppTestCase):
             self.assertNotIn("auth_token", sess)
             self.assertNotIn("auth_state", sess)
         self.assertStatus(response, HTTPStatus.FOUND)
-        self.assertRedirects(response, "http://GOOGLE_OAUTH2_BASE_URI")
+        self.assertRedirects(response, "/")
