@@ -4,6 +4,7 @@ from goslinks.db.factory import get_model
 from goslinks.forms import LinkEditForm
 from goslinks.google_oauth2.decorators import login_required
 from goslinks.google_oauth2.utils import logged_in_user
+from goslinks.helpers.slug import clean_to_slug
 
 bp = Blueprint("goslinks", __name__)
 
@@ -21,9 +22,10 @@ def home():
 @bp.route("/edit/<slug>", methods=("GET", "POST"))
 @login_required
 def edit(slug):
+    clean_slug = clean_to_slug(slug)
     user = logged_in_user()
     link_model = get_model("link")
-    link = link_model.get_or_init(user, slug)
+    link = link_model.get_or_init(user, clean_slug)
 
     form = LinkEditForm(obj=link)
     if form.validate_on_submit():
@@ -40,11 +42,12 @@ def edit(slug):
 @bp.route("/<slug>/")
 @login_required
 def goslink_redirect(slug):
+    clean_slug = clean_to_slug(slug)
     user = logged_in_user()
     link_model = get_model("link")
     try:
-        link = link_model.get_from_organization_and_slug(user.organization, slug)
+        link = link_model.get_from_organization_and_slug(user.organization, clean_slug)
     except link_model.DoesNotExist:
-        return redirect(url_for(".edit", slug=slug))
+        return redirect(url_for(".edit", slug=clean_slug))
     else:
         return redirect(link.url)

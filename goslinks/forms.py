@@ -1,24 +1,20 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, validators
 
+from goslinks.helpers.slug import clean_to_slug
+
 
 class SlugField(StringField):
-    def __init__(self, *args, **kwargs):
-        additional_validators = kwargs.pop("validators", None) or []
-        kwargs["validators"] = [
-            validators.Regexp(
-                r"^[-\w]+$",
-                message="Only lowercase letters, numbers, and dashes (-) are allowed.",
-            )
-        ] + additional_validators
-        super().__init__(*args, **kwargs)
-
     def process_data(self, value):
-        if value:
-            value = value.lower().replace(" ", "-").replace("_", "-")
-        return super().process_data(value)
+        super().process_data(value)
+        if self.data:
+            self.data = clean_to_slug(value)
+
+    def process_formdata(self, valuelist):
+        super().process_formdata(valuelist)
+        self.data = clean_to_slug(self.data)
 
 
 class LinkEditForm(FlaskForm):
-    slug = SlugField("Name")
+    slug = SlugField("Name", validators=[validators.DataRequired()])
     url = StringField("URL", validators=[validators.DataRequired(), validators.URL()])

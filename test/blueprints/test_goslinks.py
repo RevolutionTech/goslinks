@@ -74,6 +74,21 @@ class GoslinkEditTestCase(AppTestCase):
         retrieved_link = get_model("link").get(link.name)
         self.assertEqual(retrieved_link.url, new_url)
 
+    def test_create_new_link_strips_dashes(self):
+        email = self.login()
+
+        response = self.client.post(
+            "/edit/foo-bar", data={"slug": "foo-bar", "url": self.LINK_URL}
+        )
+        self.assertStatus(response, HTTPStatus.FOUND)
+
+        link_model = get_model("link")
+        _, organization = email.split("@")
+        with self.assertRaises(link_model.DoesNotExist):
+            link_model.get_from_organization_and_slug(organization, "foo-bar")
+        link = link_model.get_from_organization_and_slug(organization, "foobar")
+        self.assertEqual(link.url, self.LINK_URL)
+
 
 class GoslinkRedirectTestCase(AppTestCase):
     def test_goslink_redirect_requires_authentication(self):
