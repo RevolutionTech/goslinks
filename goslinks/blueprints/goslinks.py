@@ -39,10 +39,13 @@ def edit(slug):
     return render_template("edit.html", user=user, link=link, form=form)
 
 
-@bp.route("/<slug>/")
+@bp.route("/<path:slug>/")
 @login_required
 def goslink_redirect(slug):
     clean_slug = clean_to_slug(slug)
+    if clean_slug.startswith("edit"):
+        return redirect(url_for(".edit", slug=clean_slug[4:]))
+
     user = logged_in_user()
     link_model = get_model("link")
     try:

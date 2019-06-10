@@ -110,3 +110,10 @@ class GoslinkRedirectTestCase(AppTestCase):
         response = self.client.get(f"/{link.slug}/")
         self.assertStatus(response, HTTPStatus.FOUND)
         self.assertRedirects(response, link.url)
+
+    def test_goslink_redirect_starting_with_edit_redirects_to_edit_page(self):
+        self.login()
+
+        response = self.client.get("/edit%2Ffoo/")
+        self.assertStatus(response, HTTPStatus.FOUND)
+        self.assertRedirects(response, "/edit/foo")
