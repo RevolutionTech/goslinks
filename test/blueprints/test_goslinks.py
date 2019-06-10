@@ -21,7 +21,7 @@ class GoslinkEditTestCase(AppTestCase):
     def test_edit_requires_authentication(self):
         response = self.client.get("/edit/foo")
         self.assertStatus(response, HTTPStatus.FOUND)
-        self.assertRedirects(response, "/login/google")
+        self.assertRedirects(response, "/login/google?next=/edit/foo")
 
     def test_edit_form_requires_url(self):
         self.login()
@@ -94,7 +94,7 @@ class GoslinkRedirectTestCase(AppTestCase):
     def test_goslink_redirect_requires_authentication(self):
         response = self.client.get("/foo/")
         self.assertStatus(response, HTTPStatus.FOUND)
-        self.assertRedirects(response, "/login/google")
+        self.assertRedirects(response, "/login/google?next=/foo/")
 
     def test_goslink_redirect_to_edit_page_with_new_slug(self):
         self.login()

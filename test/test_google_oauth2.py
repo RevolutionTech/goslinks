@@ -48,7 +48,7 @@ class LoginRequiredDecoratorTestCase(AppTestCase):
 
         response = self.client.get("/hello/")
         self.assertStatus(response, HTTPStatus.FOUND)
-        self.assertRedirects(response, "/login/google")
+        self.assertRedirects(response, "/login/google?next=/hello/")
 
     def test_login_required_allows_authenticated_user(self):
         @self.app.route("/hello/")

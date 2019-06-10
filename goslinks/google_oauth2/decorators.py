@@ -1,6 +1,6 @@
 import functools
 
-from flask import make_response, redirect, url_for
+from flask import make_response, redirect, request, url_for
 
 from goslinks.google_oauth2.utils import logged_in_user
 
@@ -25,6 +25,7 @@ def login_required(view):
         if logged_in_user():
             return view(*args, **kwargs)
         else:
-            return redirect(url_for("google_oauth2.login"))
+            login_url = url_for("google_oauth2.login")
+            return redirect(f"{login_url}?next={request.path}")
 
     return login_required_impl
