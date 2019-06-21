@@ -8,7 +8,7 @@ license = "ISC"
 [tool.poetry.dependencies]
 python = "^3.6"
 Flask = "^1.0"
-pynamodb = "^3.3"
+pynamodb = "^3.4"
 authlib = "^0.11.0"
 google-auth = "^1.6"
 google-api-python-client = "^1.7"
