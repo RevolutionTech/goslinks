@@ -7,7 +7,7 @@ license = "ISC"
 
 [tool.poetry.dependencies]
 python = "^3.6"
-Flask = "^1.0"
+Flask = "^1.1"
 pynamodb = "^3.4"
 authlib = "^0.11.0"
 google-auth = "^1.6"
