@@ -12,6 +12,7 @@ before_script:
   - cp .env-sample .env
 
 script:
+  - poetry run black . --check
   - poetry run coverage run -m unittest
 
 after_success:
