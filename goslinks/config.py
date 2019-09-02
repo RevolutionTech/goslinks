@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-class Config(object):
+class Config:
     SECRET_KEY = os.environ["GOSLINKS_SECRET_KEY"]
 
     MODEL_BASE_CLASS = "pynamodb.models.Model"

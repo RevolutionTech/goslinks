@@ -12,6 +12,7 @@ before_script:
   - cp .env-sample .env
 
 script:
+  - poetry run pyupgrade --py36-plus $(find . -name '*.py')
   - poetry run black . --check
   - poetry run coverage run -m unittest
 
