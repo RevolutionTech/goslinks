@@ -428,6 +428,17 @@ version = "1.2.4"
 Unidecode = ">=0.04.16"
 
 [[package]]
+category = "dev"
+description = "A tool to automatically upgrade syntax for newer versions."
+name = "pyupgrade"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+version = "1.23.0"
+
+[package.dependencies]
+tokenize-rt = ">=3.2.0"
+
+[[package]]
 category = "main"
 description = "YAML parser and emitter for Python"
 name = "pyyaml"
@@ -478,6 +489,14 @@ name = "six"
 optional = false
 python-versions = ">=2.6, !=3.0.*, !=3.1.*"
 version = "1.12.0"
+
+[[package]]
+category = "dev"
+description = "A wrapper around the stdlib `tokenize` which roundtrips."
+name = "tokenize-rt"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+version = "3.2.0"
 
 [[package]]
 category = "main"
@@ -595,7 +614,7 @@ wheel = ">=0.30.0"
 wsgi-request-logger = "0.4.6"
 
 [metadata]
-content-hash = "5e32b0cdc3d62eae1f6fe3440bacccb9d0e3145566a2a91cf963014b0cb9a0fc"
+content-hash = "8e535a35188af08d542551671e8e17bedce35f1c4706232743b1ee5d78044de9"
 python-versions = "^3.6"
 
 [metadata.hashes]
@@ -641,11 +660,13 @@ pynamodb = ["53f7d8704dec47388561aacc1cd9eef4bb038e18bcd4a80b5a6707f7e282e977", 
 python-dateutil = ["891c38b2a02f5bb1be3e4793866c8df49c7d19baabf9c1bad62547e0b4866aca", "95511bae634d69bc7329ba55e646499a842bc4ec342ad54a8cdb65645a0aad3c"]
 python-dotenv = ["debd928b49dbc2bf68040566f55cdb3252458036464806f4094487244e2a4093", "f157d71d5fec9d4bd5f51c82746b6344dffa680ee85217c123f4a0c8117c4544"]
 python-slugify = ["57a385df7a1c6dbd15f7666eaff0ff29d3f60363b228b1197c5308ed3ba5f824", "c3733135d3b184196fdb8844f6a74bbfb9cf6720d1dcce3254bdc434353f938f"]
+pyupgrade = ["c2e755fb1628e4364680beadbadd67a4af82a2fe6fb1fcda00987dced381d0d4", "cdf7a1c204cb3f276818d36bdc67ff78efa435c9de4ce676fb6530eb86a917ef"]
 pyyaml = ["1adecc22f88d38052fb787d959f003811ca858b799590a5eaa70e63dca50308c", "436bc774ecf7c103814098159fbb84c2715d25980175292c648f2da143909f95", "460a5a4248763f6f37ea225d19d5c205677d8d525f6a83357ca622ed541830c2", "5a22a9c84653debfbf198d02fe592c176ea548cccce47553f35f466e15cf2fd4", "7a5d3f26b89d688db27822343dfa25c599627bc92093e788956372285c6298ad", "9372b04a02080752d9e6f990179a4ab840227c6e2ce15b95e1278456664cf2ba", "a5dcbebee834eaddf3fa7366316b880ff4062e4bcc9787b78c7fbb4a26ff2dd1", "aee5bab92a176e7cd034e57f46e9df9a9862a71f8f37cad167c6fc74c65f5b4e", "c51f642898c0bacd335fc119da60baae0824f2cde95b0330b56c0553439f0673", "c68ea4d3ba1705da1e0d85da6684ac657912679a649e8868bd850d2c299cce13", "e23d0cc5299223dcc37885dae624f382297717e459ea24053709675a976a3e19"]
 requests = ["502a824f31acdacb3a35b6690b5fbf0bc41d63a24a45c4004352b0242707598e", "7bf2a778576d825600030a110f3c0e3e8edc51dfaafe1c146e39a2027784957b"]
 rsa = ["14ba45700ff1ec9eeb206a2ce76b32814958a98e372006c8fb76ba820211be66", "1a836406405730121ae9823e19c6e806c62bbad73f890574fff50efa4122c487"]
 s3transfer = ["7b9ad3213bff7d357f888e0fab5101b56fa1a0548ee77d121c3a3dbfbef4cb2e", "f23d5cb7d862b104401d9021fc82e5fa0e0cf57b7660a1331425aab0c691d021"]
 six = ["3350809f0555b11f552448330d0b52d5f24c91a322ea4a15ef22629740f3761c", "d16a0141ec1a18405cd4ce8b4613101da75da0e9a7aec5bdd4fa804d0e0eba73"]
+tokenize-rt = ["2f44eee8f620102f8a03c50142795121faf86e020d208896ea7a7047bbe933cf", "53f5c22d36e5c6f8e3fdbc6cb4dd151d1b3d38cea1b85b5fef6268f153733899"]
 toml = ["229f81c57791a41d65e399fc06bf0848bab550a9dfd5ed66df18ce5f05e73d5c", "235682dd292d5899d361a811df37e04a8828a5b1da3115886b73cf81ebc9100e", "f1db651f9657708513243e61e6cc67d101a39bad662eaa9b5546f789338e07a3"]
 tqdm = ["ba650e08b8b102923a05896bf9d7e1c9cdc20b484156df0511a4bbf1f6b6f89b", "fa6d2ea6285f56e75d7efe9259805deadc450f16066a1f82ad0629ea9be2cd0f"]
 troposphere = ["95c2496e6cbf7240083bf5ad680f98a940837d374ce70b3ef7be5b8a195869fe"]
