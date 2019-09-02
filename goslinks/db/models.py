@@ -1,7 +1,7 @@
 from pynamodb.attributes import UnicodeAttribute
 
 
-class UserModel(object):
+class UserModel:
     class Meta:
         table_name = "goslinks-users"
         read_capacity_units = 1
@@ -30,7 +30,7 @@ class UserModel(object):
         return user
 
 
-class LinkModel(object):
+class LinkModel:
     class Meta:
         table_name = "goslinks-links"
         read_capacity_units = 1
