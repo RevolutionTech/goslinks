@@ -20,7 +20,7 @@ bp = Blueprint("google_oauth2", __name__)
 @no_cache
 def login():
     oauth2_session = build_oauth2_session()
-    uri, state_token = oauth2_session.authorization_url(AUTHORIZATION_URL)
+    uri, state_token = oauth2_session.create_authorization_url(AUTHORIZATION_URL)
 
     state_params = {"token": state_token}
     if "next" in request.args:

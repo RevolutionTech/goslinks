@@ -11,7 +11,7 @@ class GoogleOAuth2LoginTestCase(AppTestCase):
         google_oauth2_signin_url = "https://accounts.google.com/o/oauth2/v2/auth"
         google_oauth2_state_token = "GOOGLE_OAUTH2_STATE_TOKEN"
         mock_build_oauth2_session.return_value = mock.Mock(
-            authorization_url=lambda url: (
+            create_authorization_url=lambda url: (
                 google_oauth2_signin_url,
                 google_oauth2_state_token,
             )
@@ -32,7 +32,7 @@ class GoogleOAuth2LoginTestCase(AppTestCase):
         google_oauth2_signin_url = "https://accounts.google.com/o/oauth2/v2/auth"
         google_oauth2_state_token = "GOOGLE_OAUTH2_STATE_TOKEN"
         mock_build_oauth2_session.return_value = mock.Mock(
-            authorization_url=lambda url: (
+            create_authorization_url=lambda url: (
                 google_oauth2_signin_url,
                 google_oauth2_state_token,
             )
