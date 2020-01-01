@@ -250,10 +250,10 @@ description = "Google Authentication Library"
 name = "google-auth"
 optional = false
 python-versions = ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*"
-version = "1.7.1"
+version = "1.10.0"
 
 [package.dependencies]
-cachetools = ">=2.0.0,<3.2"
+cachetools = ">=2.0.0,<5.0"
 pyasn1-modules = ">=0.2.1"
 rsa = ">=3.1.4,<4.1"
 setuptools = ">=40.3.0"
@@ -641,7 +641,7 @@ wheel = ">=0.30.0"
 wsgi-request-logger = "0.4.6"
 
 [metadata]
-content-hash = "b71aa4d3d7acffc75ab00a900c2f8eb95e270cb584b04b2ccb49740618a64b30"
+content-hash = "da8bb7bd129dfc7e936cdfa4112f868e333fc6dc6846675f4ef02631665744c6"
 python-versions = "^3.6"
 
 [metadata.hashes]
@@ -668,7 +668,7 @@ flask-testing = ["dc076623d7d850653a018cb64f500948334c8aeb6b10a5a842bf1bcfb98122
 flask-wtf = ["5d14d55cfd35f613d99ee7cba0fc3fbbe63ba02f544d349158c14ca15561cc36", "d9a9e366b32dcbb98ef17228e76be15702cd2600675668bca23f63a7947fd5ac"]
 future = ["e39ced1ab767b5936646cedba8bcce582398233d6a627067d4c6a454c90cfedb"]
 google-api-python-client = ["3121d55d106ef1a2756e8074239512055bd99eb44da417b3dd680f9a1385adec", "a8a88174f66d92aed7ebbd73744c2c319b4b1ce828e565f9ec721352d2e2fb8c"]
-google-auth = ["84105be98837fb8436e9d0bcb7a279fd85fa1d97bb35a077e70ba2fb95bcc983", "baf1b3f8b29a5f96f66753ad848473699322b63f4d68964e510554b12d002443"]
+google-auth = ["7bb2034a3a290190cf4e3eb8ebf29e5025c90f0b06a00ba4d1fb94bf0c6448f7", "c57074e594d2c6e3e316162734e8af3e15d40252022e69414cba67de66594417"]
 google-auth-httplib2 = ["098fade613c25b4527b2c08fa42d11f3c2037dda8995d86de0745228e965d445", "f1c437842155680cf9918df9bc51c1182fda41feef88c34004bd1978c8157e08"]
 hjson = ["1d1727faa6aaef2973921877125a3ab7c5f6d34b93233179d01770f41fab51f9"]
 httplib2 = ["23914b5487dfe8ef09db6656d6d63afb0cf3054ad9ebc50868ddc8e166b5f8e8", "a18121c7c72a56689efbf1aef990139ad940fee1e64c6f2458831736cd593600"]
