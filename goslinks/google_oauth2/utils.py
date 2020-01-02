@@ -1,6 +1,6 @@
 import google.oauth2.credentials
 import googleapiclient.discovery
-from authlib.client import OAuth2Session
+from authlib.integrations.requests_client import OAuth2Session
 from flask import current_app, request, session, url_for
 
 from goslinks.db.factory import get_model

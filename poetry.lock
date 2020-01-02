@@ -36,7 +36,7 @@ description = "The ultimate Python library in building OAuth and OpenID Connect 
 name = "authlib"
 optional = false
 python-versions = "*"
-version = "0.12.1"
+version = "0.13"
 
 [package.dependencies]
 cryptography = "*"
@@ -641,7 +641,7 @@ wheel = ">=0.30.0"
 wsgi-request-logger = "0.4.6"
 
 [metadata]
-content-hash = "edbef3ee08163c9a922456c2bd931174255aa82f720e7896d6893fcbc7c4dbc1"
+content-hash = "de2636917de97966a8751dca3ba03eb883cfa133dbcd454843e55dc04469c924"
 python-versions = "^3.6"
 
 [metadata.hashes]
@@ -649,7 +649,7 @@ appdirs = ["9e5896d1372858f8dd3344faf4e5014d21849c756c8d5701f78f8a103b372d92", "
 argcomplete = ["c079ceb0b72d4d4e03531ed77e6071babb9d42c3f790d7def2c41295b4990b44", "d97b7f3cfaa4e494ad59ed6d04c938fc5ed69b590bd8f53274e258fb1119bd1b"]
 asn1crypto = ["2f1adbb7546ed199e3c90ef23ec95c5cf3585bac7d11fb7eb562a3fe89c64e87", "9d5c20441baf0cb60a4ac34cc447c6c189024b6b4c6cd7877034f4965c464e49"]
 attrs = ["69c0dbf2ed392de1cb5ec704444b08a5ef81680a61cb899dc08127123af36a79", "f0b870f674851ecbfbbbd364d6b5cbdff9dcedbc7f3f5e18a6891057f21fe399"]
-authlib = ["40728195efe915c96209a6a57ad6b5565a951bb469f01bd0c38ea13a0bac6c68", "4b6a82217b376fe5e7a9e5348865591077c2e6e5d987f4741ac74975b75aa145"]
+authlib = ["401a4a184379a6551b79af30243ce1ad56da0a8da5b4925e0be260f07ee40009", "e9a6a6c5748109bd9ce9f24e71d293156c43bd0d6595bc4e63dd8f5b9e809149"]
 black = ["1b30e59be925fafc1ee4565e5e08abef6b03fe455102883820fe5ee2e4734e0b", "c2edb73a08e9e0e6f65a0e6af18b059b8b1cdd5bef997d7a0b181df93dc81539"]
 boto3 = ["7485ae2b6d9a380af74285890229659d6f114168ab5133aed924b5c41a28860a", "b8107b5b4296c2c8a68cd67b44988317dd1e11dd2b295e41d502c17b1e227bfc"]
 botocore = ["bab1762dddeca752f5e7fe8fb87dc27a1ef2da7498a98c2be3802547cbb182f4", "e3120e6d36e06145ce1c6289776f4292805e5119c6f7077cb8782b8e573a01fd"]
