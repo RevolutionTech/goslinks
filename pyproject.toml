@@ -20,7 +20,7 @@ zappa = "^0.48.2"
 [tool.poetry.dev-dependencies]
 black = {version = "^19.10b0",allows-prereleases = true}
 coverage = "^5.0"
-pyupgrade = "^1.25"
+pyupgrade = "^1.26"
 
 [tool.black]
 line-length = 88
