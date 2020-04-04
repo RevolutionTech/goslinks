@@ -399,14 +399,6 @@ placebo = ">=0.8.1"
 
 [[package]]
 category = "main"
-description = "AWS Lambda Packages"
-name = "lambda-packages"
-optional = false
-python-versions = "*"
-version = "0.20.0"
-
-[[package]]
-category = "main"
 description = "Safely add untrusted strings to HTML/XML markup."
 name = "markupsafe"
 optional = false
@@ -420,6 +412,18 @@ name = "pathspec"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 version = "0.6.0"
+
+[[package]]
+category = "main"
+description = "pip-tools keeps your pinned dependencies fresh."
+name = "pip-tools"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+version = "4.5.1"
+
+[package.dependencies]
+click = ">=7"
+six = "*"
 
 [[package]]
 category = "main"
@@ -723,34 +727,32 @@ description = "Server-less Python Web Services for AWS Lambda and API Gateway"
 name = "zappa"
 optional = false
 python-versions = "*"
-version = "0.48.2"
+version = "0.51.0"
 
 [package.dependencies]
-PyYAML = ">=3.13"
-Werkzeug = ">=0.14"
-argcomplete = "1.9.3"
-boto3 = ">=1.4.7"
-botocore = ">=1.7.19"
-docutils = ">=0.12"
-durationpy = "0.5"
-future = "0.16.0"
-hjson = "3.0.1"
-jmespath = "0.9.3"
+PyYAML = "*"
+Werkzeug = "<1.0"
+argcomplete = "*"
+boto3 = "*"
+durationpy = "*"
+future = "*"
+hjson = "*"
+jmespath = "*"
 kappa = "0.6.0"
-lambda-packages = "0.20.0"
 pip = ">=9.0.1"
-python-dateutil = ">=2.6.1,<2.7.0"
-python-slugify = "1.2.4"
+pip-tools = "*"
+python-dateutil = "<2.7.0"
+python-slugify = "*"
 requests = ">=2.20.0"
-six = ">=1.11.0"
-toml = ">=0.9.4"
-tqdm = "4.19.1"
-troposphere = ">=1.9.0"
-wheel = ">=0.30.0"
-wsgi-request-logger = "0.4.6"
+six = "*"
+toml = "*"
+tqdm = "*"
+troposphere = "*"
+wheel = "*"
+wsgi-request-logger = "*"
 
 [metadata]
-content-hash = "fb5fb137d15bd6787bc0424cfb661baf43238cd14969bdfeff84247445c22688"
+content-hash = "87d245649c1a99d55d12e4dee5828c123eda595d9b59f4cd7bf3c4307cd7acea"
 python-versions = "^3.6"
 
 [metadata.files]
@@ -955,9 +957,6 @@ kappa = [
     {file = "kappa-0.6.0-py2-none-any.whl", hash = "sha256:4d6b7b3accce4a0aaaac92b36237a6304f0f2fffbbe3caea3f7c9f52d12c9989"},
     {file = "kappa-0.6.0.tar.gz", hash = "sha256:4b5b372872f25d619e427e04282551048dc975a107385b076b3ffc6406a15833"},
 ]
-lambda-packages = [
-    {file = "lambda_packages-0.20.0.tar.gz", hash = "sha256:b5e3b81ecef5f7c1b0903b5c40813536ba2343a33868a567e4e4ff1e26243406"},
-]
 markupsafe = [
     {file = "MarkupSafe-1.1.1-cp27-cp27m-macosx_10_6_intel.whl", hash = "sha256:09027a7803a62ca78792ad89403b1b7a73a01c8cb65909cd876f7fcebd79b161"},
     {file = "MarkupSafe-1.1.1-cp27-cp27m-manylinux1_i686.whl", hash = "sha256:e249096428b3ae81b08327a63a485ad0878de3fb939049038579ac0ef61e17e7"},
@@ -995,6 +994,10 @@ markupsafe = [
 ]
 pathspec = [
     {file = "pathspec-0.6.0.tar.gz", hash = "sha256:e285ccc8b0785beadd4c18e5708b12bb8fcf529a1e61215b3feff1d1e559ea5c"},
+]
+pip-tools = [
+    {file = "pip-tools-4.5.1.tar.gz", hash = "sha256:693f30e451875796b1b25203247f0b4cf48a4c4a5ab7341f4f33ffd498cdcc98"},
+    {file = "pip_tools-4.5.1-py2.py3-none-any.whl", hash = "sha256:be9c796aa88b2eec5cabf1323ba1cb60a08212b84bfb75b8b4037a8ef8cb8cb6"},
 ]
 placebo = [
     {file = "placebo-0.9.0.tar.gz", hash = "sha256:03157f8527bbc2965b71b88f4a139ef8038618b346787f20d63e3c5da541b047"},
@@ -1188,7 +1191,6 @@ wtforms = [
     {file = "WTForms-2.2.1.tar.gz", hash = "sha256:0cdbac3e7f6878086c334aa25dc5a33869a3954e9d1e015130d65a69309b3b61"},
 ]
 zappa = [
-    {file = "zappa-0.48.2-py2-none-any.whl", hash = "sha256:621209ceaf2cf5fcc18ed6bb6cf53aeb2315e38989a6929cbb49c66b5454d656"},
-    {file = "zappa-0.48.2-py3-none-any.whl", hash = "sha256:86b125c0e9696b177f61bf636ab19ead7aba1bb9281cdba0651825358337008e"},
-    {file = "zappa-0.48.2.tar.gz", hash = "sha256:b7a04172407cdb9277cb166b42920d3c5d745fd50204d1ce7f42769e61b6649e"},
+    {file = "zappa-0.51.0-py3-none-any.whl", hash = "sha256:c6e740334c1c39e644a345124b7317003420b632a8f7a6811d18b82bb16e2f8e"},
+    {file = "zappa-0.51.0.tar.gz", hash = "sha256:ccfc336d3bc48a6898cbbd157e16653f717dbe3ca37f933ce40acfe242a03a40"},
 ]
