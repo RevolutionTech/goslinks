@@ -13,7 +13,7 @@ authlib = "^0.14"
 google-auth = "^1.11"
 google-api-python-client = "^1.8"
 python-dotenv = "^0.12.0"
-Flask-Testing = "^0.7.1"
+Flask-Testing = "^0.8.0"
 flask-wtf = "^0.14.3"
 zappa = "^0.51.0"
 

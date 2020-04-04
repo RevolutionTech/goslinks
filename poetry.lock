@@ -224,7 +224,7 @@ description = "Unit testing for Flask"
 name = "flask-testing"
 optional = false
 python-versions = "*"
-version = "0.7.1"
+version = "0.8.0"
 
 [package.dependencies]
 Flask = "*"
@@ -752,7 +752,7 @@ wheel = "*"
 wsgi-request-logger = "*"
 
 [metadata]
-content-hash = "87d245649c1a99d55d12e4dee5828c123eda595d9b59f4cd7bf3c4307cd7acea"
+content-hash = "6d98463859af59f779e55393dbedfd19c47143e8fb520bac696b96ff39da709f"
 python-versions = "^3.6"
 
 [metadata.files]
@@ -902,7 +902,7 @@ flask = [
     {file = "Flask-1.1.1.tar.gz", hash = "sha256:13f9f196f330c7c2c5d7a5cf91af894110ca0215ac051b5844701f2bfd934d52"},
 ]
 flask-testing = [
-    {file = "Flask-Testing-0.7.1.tar.gz", hash = "sha256:dc076623d7d850653a018cb64f500948334c8aeb6b10a5a842bf1bcfb98122bc"},
+    {file = "Flask-Testing-0.8.0.tar.gz", hash = "sha256:d849bf53eb1ceb09dff6611888588cb60f20238058fb1ebcd917d69febc373e6"},
 ]
 flask-wtf = [
     {file = "Flask-WTF-0.14.3.tar.gz", hash = "sha256:d417e3a0008b5ba583da1763e4db0f55a1269d9dd91dcc3eb3c026d3c5dbd720"},
