@@ -36,7 +36,7 @@ description = "The ultimate Python library in building OAuth and OpenID Connect 
 name = "authlib"
 optional = false
 python-versions = "*"
-version = "0.13"
+version = "0.14.1"
 
 [package.dependencies]
 cryptography = "*"
@@ -750,7 +750,7 @@ wheel = ">=0.30.0"
 wsgi-request-logger = "0.4.6"
 
 [metadata]
-content-hash = "080c38e05f60a95732f3ecf06750ce4bbf896f9987a911e685870f35de1441b4"
+content-hash = "fb5fb137d15bd6787bc0424cfb661baf43238cd14969bdfeff84247445c22688"
 python-versions = "^3.6"
 
 [metadata.files]
@@ -767,8 +767,8 @@ attrs = [
     {file = "attrs-19.1.0.tar.gz", hash = "sha256:f0b870f674851ecbfbbbd364d6b5cbdff9dcedbc7f3f5e18a6891057f21fe399"},
 ]
 authlib = [
-    {file = "Authlib-0.13-py2.py3-none-any.whl", hash = "sha256:e9a6a6c5748109bd9ce9f24e71d293156c43bd0d6595bc4e63dd8f5b9e809149"},
-    {file = "Authlib-0.13.tar.gz", hash = "sha256:401a4a184379a6551b79af30243ce1ad56da0a8da5b4925e0be260f07ee40009"},
+    {file = "Authlib-0.14.1-py2.py3-none-any.whl", hash = "sha256:b6d3f59f609d352bff26dce2c7969cff7204213fae1c21742037b7aa8d7360a6"},
+    {file = "Authlib-0.14.1.tar.gz", hash = "sha256:89d55b14362f8acee450f9d153645e438e3a38be99b599190718c4406f575b05"},
 ]
 black = [
     {file = "black-19.10b0-py36-none-any.whl", hash = "sha256:1b30e59be925fafc1ee4565e5e08abef6b03fe455102883820fe5ee2e4734e0b"},
