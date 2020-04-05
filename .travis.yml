@@ -1,7 +1,7 @@
 dist: xenial
 language: python
 python:
-  - 3.6
+  - 3.8
 
 before_install:
   - pip install poetry
@@ -12,7 +12,7 @@ before_script:
   - cp .env-sample .env
 
 script:
-  - poetry run pyupgrade --py36-plus $(find . -name '*.py')
+  - poetry run pyupgrade --py37-plus $(find . -name '*.py')
   - poetry run black . --check
   - poetry run coverage run -m unittest
 

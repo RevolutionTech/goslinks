@@ -6,7 +6,7 @@ authors = ["Lucas Connors <lucas@revolutiontech.ca>"]
 license = "ISC"
 
 [tool.poetry.dependencies]
-python = "^3.6"
+python = "^3.8"
 Flask = "^1.1"
 pynamodb = "^4.3"
 authlib = "^0.14"
@@ -24,7 +24,7 @@ pyupgrade = "^2.0"
 
 [tool.black]
 line-length = 88
-target_version = ["py36"]
+target_version = ["py38"]
 
 [build-system]
 requires = ["poetry>=1.0"]
