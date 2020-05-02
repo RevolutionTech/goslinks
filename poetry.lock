@@ -478,7 +478,7 @@ description = "A Pythonic Interface to DynamoDB"
 name = "pynamodb"
 optional = false
 python-versions = "*"
-version = "4.3.1"
+version = "4.3.2"
 
 [package.dependencies]
 botocore = ">=1.12.54"
@@ -1057,8 +1057,8 @@ pycparser = [
     {file = "pycparser-2.19.tar.gz", hash = "sha256:a988718abfad80b6b157acce7bf130a30876d27603738ac39f140993246b25b3"},
 ]
 pynamodb = [
-    {file = "pynamodb-4.3.1-py2.py3-none-any.whl", hash = "sha256:673db4e6bc21731cf0d127bea843a73b620d048e23c3e62ed93d2403dcf747a2"},
-    {file = "pynamodb-4.3.1.tar.gz", hash = "sha256:2e208577013c1b6a7309fc3aac11d7ade9a4f21c9eb319e31cc169eaa248ac0f"},
+    {file = "pynamodb-4.3.2-py2.py3-none-any.whl", hash = "sha256:cfaae8db840bae1ff7cdcf0a3ae39c39bbb4c877f7f324b0ecc6e5467cc24982"},
+    {file = "pynamodb-4.3.2.tar.gz", hash = "sha256:58bd62089741ef689f845d6ca826ab50e39b9a0a8ae3bd7a84dc167c1a4ec8fa"},
 ]
 python-dateutil = [
     {file = "python-dateutil-2.6.1.tar.gz", hash = "sha256:891c38b2a02f5bb1be3e4793866c8df49c7d19baabf9c1bad62547e0b4866aca"},
