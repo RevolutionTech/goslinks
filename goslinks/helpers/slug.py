@@ -1,6 +1,5 @@
 import re
 
-
 CLEANED_SLUG_INVALID_CHAR_RE = re.compile(r"[^a-z0-9]")
 
 

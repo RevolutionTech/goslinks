@@ -1,16 +1,16 @@
 from http import HTTPStatus
+from test.app_test_case import AppTestCase, SimpleTestCase
 from unittest import mock
 
 from flask import session
 
-from goslinks.google_oauth2.decorators import no_cache, login_required
+from goslinks.google_oauth2.decorators import login_required, no_cache
 from goslinks.google_oauth2.utils import (
-    logged_in_user,
-    build_oauth2_session,
     build_credentials,
+    build_oauth2_session,
     get_user_info,
+    logged_in_user,
 )
-from test.app_test_case import AppTestCase, SimpleTestCase
 
 
 class NoCacheDecoratorTestCase(SimpleTestCase):

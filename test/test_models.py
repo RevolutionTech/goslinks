@@ -1,5 +1,6 @@
-from goslinks.db.factory import get_model
 from test.app_test_case import AppTestCase
+
+from goslinks.db.factory import get_model
 
 
 class UserModelTestCase(AppTestCase):

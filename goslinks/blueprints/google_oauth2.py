@@ -5,10 +5,10 @@ from flask import Blueprint, make_response, redirect, render_template, request, 
 from goslinks.db.factory import get_model
 from goslinks.google_oauth2.constants import (
     ACCESS_TOKEN_URI,
-    AUTHORIZATION_URL,
     AUTH_EMAIL,
-    AUTH_TOKEN_KEY,
     AUTH_STATE_KEY,
+    AUTH_TOKEN_KEY,
+    AUTHORIZATION_URL,
 )
 from goslinks.google_oauth2.decorators import no_cache
 from goslinks.google_oauth2.utils import build_oauth2_session, get_user_info

@@ -1,8 +1,8 @@
+from test.app_test_case import SimpleTestCase
 from unittest import mock
 
 from goslinks.cli import migrate
 from goslinks.db.factory import get_model, get_models
-from test.app_test_case import SimpleTestCase
 
 
 class MigrateTestCase(SimpleTestCase):
