@@ -1,8 +1,7 @@
-from http import HTTPStatus
 import urllib
-from unittest import mock
-
+from http import HTTPStatus
 from test.app_test_case import AppTestCase
+from unittest import mock
 
 
 class GoogleOAuth2LoginTestCase(AppTestCase):

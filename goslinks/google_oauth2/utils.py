@@ -6,9 +6,9 @@ from flask import current_app, request, session, url_for
 from goslinks.db.factory import get_model
 from goslinks.google_oauth2.constants import (
     ACCESS_TOKEN_URI,
-    AUTHORIZATION_SCOPE,
     AUTH_EMAIL,
     AUTH_TOKEN_KEY,
+    AUTHORIZATION_SCOPE,
 )
 
 

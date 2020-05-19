@@ -1,7 +1,7 @@
 from http import HTTPStatus
+from test.app_test_case import AppTestCase
 
 from goslinks.db.factory import get_model
-from test.app_test_case import AppTestCase
 
 
 class HomeTestCase(AppTestCase):
