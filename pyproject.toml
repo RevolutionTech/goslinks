@@ -20,7 +20,7 @@ zappa = "^0.51.0"
 [tool.poetry.dev-dependencies]
 black = "^19.10b0"
 coverage = "^5.1"
-pyupgrade = "^2.3"
+pyupgrade = "^2.4"
 isort = "^4.3.21"
 
 [tool.isort]
