@@ -4,6 +4,12 @@ from test.app_test_case import AppTestCase
 from goslinks.db.factory import get_model
 
 
+class FaviconTestCase(AppTestCase):
+    def test_empty_response(self):
+        response = self.client.get("/favicon.ico")
+        self.assertStatus(response, HTTPStatus.NO_CONTENT)
+
+
 class HomeTestCase(AppTestCase):
     def test_unauthenticated_user_renders_home(self):
         response = self.client.get("/")

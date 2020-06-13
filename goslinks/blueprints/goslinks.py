@@ -9,6 +9,11 @@ from goslinks.helpers.slug import clean_to_slug
 bp = Blueprint("goslinks", __name__)
 
 
+@bp.route("/favicon.ico")
+def favicon():
+    return "", 204
+
+
 @bp.route("/")
 def home():
     user = logged_in_user()
