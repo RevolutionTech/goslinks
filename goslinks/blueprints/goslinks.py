@@ -1,9 +1,9 @@
 from flask import Blueprint, redirect, render_template, url_for
 
+from goslinks.auth.decorators import login_required
+from goslinks.auth.utils import logged_in_user
 from goslinks.db.factory import get_model
 from goslinks.forms import LinkEditForm
-from goslinks.google_oauth2.decorators import login_required
-from goslinks.google_oauth2.utils import logged_in_user
 from goslinks.helpers.slug import clean_to_slug
 
 bp = Blueprint("goslinks", __name__)

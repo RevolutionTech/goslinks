@@ -1,8 +1,9 @@
 import functools
 
-from flask import make_response, redirect, request, url_for
+from flask import make_response, redirect, request, session, url_for
 
-from goslinks.google_oauth2.utils import logged_in_user
+from goslinks.auth.constants import AUTH_NEXT_URL_KEY
+from goslinks.auth.utils import logged_in_user
 
 
 def no_cache(view):
@@ -25,7 +26,11 @@ def login_required(view):
         if logged_in_user():
             return view(*args, **kwargs)
         else:
-            login_url = url_for("google_oauth2.login")
-            return redirect(f"{login_url}?next={request.path}")
+            # Save the URL that the user was trying to navigate to
+            # as part of the session
+            session[AUTH_NEXT_URL_KEY] = request.path
+
+            login_url = url_for("loginpass.login", name="google")
+            return redirect(login_url)
 
     return login_required_impl
