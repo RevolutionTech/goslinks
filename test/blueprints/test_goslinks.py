@@ -4,6 +4,12 @@ from test.app_test_case import AppTestCase
 from goslinks.db.factory import get_model
 
 
+class FaviconTestCase(AppTestCase):
+    def test_empty_response(self):
+        response = self.client.get("/favicon.ico")
+        self.assertStatus(response, HTTPStatus.NO_CONTENT)
+
+
 class HomeTestCase(AppTestCase):
     def test_unauthenticated_user_renders_home(self):
         response = self.client.get("/")
@@ -21,7 +27,7 @@ class GoslinkEditTestCase(AppTestCase):
     def test_edit_requires_authentication(self):
         response = self.client.get("/edit/foo")
         self.assertStatus(response, HTTPStatus.FOUND)
-        self.assertRedirects(response, "/login/google?next=/edit/foo")
+        self.assertRedirects(response, "/login/google")
 
     def test_edit_form_requires_url(self):
         self.login()
@@ -94,7 +100,7 @@ class GoslinkRedirectTestCase(AppTestCase):
     def test_goslink_redirect_requires_authentication(self):
         response = self.client.get("/foo/")
         self.assertStatus(response, HTTPStatus.FOUND)
-        self.assertRedirects(response, "/login/google?next=/foo/")
+        self.assertRedirects(response, "/login/google")
 
     def test_goslink_redirect_to_edit_page_with_new_slug(self):
         self.login()

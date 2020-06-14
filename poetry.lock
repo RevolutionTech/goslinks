@@ -413,6 +413,18 @@ placebo = ">=0.8.1"
 
 [[package]]
 category = "main"
+description = "Social connections powered by Authlib for Flask and Django"
+name = "loginpass"
+optional = false
+python-versions = "*"
+version = "0.5"
+
+[package.dependencies]
+Authlib = ">=0.14.3"
+requests = "*"
+
+[[package]]
+category = "main"
 description = "Safely add untrusted strings to HTML/XML markup."
 name = "markupsafe"
 optional = false
@@ -766,7 +778,7 @@ wheel = "*"
 wsgi-request-logger = "*"
 
 [metadata]
-content-hash = "486dce16ea8c01a813410c120218d778e91acbf5d3c9cb66e74505a851e465a5"
+content-hash = "47f05515fa1ce6011bd220145ba7b16c9f6589312b3024a6a54f1a255395b8df"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -974,6 +986,10 @@ jmespath = [
 kappa = [
     {file = "kappa-0.6.0-py2-none-any.whl", hash = "sha256:4d6b7b3accce4a0aaaac92b36237a6304f0f2fffbbe3caea3f7c9f52d12c9989"},
     {file = "kappa-0.6.0.tar.gz", hash = "sha256:4b5b372872f25d619e427e04282551048dc975a107385b076b3ffc6406a15833"},
+]
+loginpass = [
+    {file = "loginpass-0.5-py2.py3-none-any.whl", hash = "sha256:24137ef5a3169f4b2873063f766dc90e34f2dc48de9130d58dafad767d0aabf1"},
+    {file = "loginpass-0.5.tar.gz", hash = "sha256:cf6a1e8129c632cfaa51dbeeeae10629b4678a65072935c7015fecae01a4e8fc"},
 ]
 markupsafe = [
     {file = "MarkupSafe-1.1.1-cp27-cp27m-macosx_10_6_intel.whl", hash = "sha256:09027a7803a62ca78792ad89403b1b7a73a01c8cb65909cd876f7fcebd79b161"},
