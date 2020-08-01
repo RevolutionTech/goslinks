@@ -534,7 +534,7 @@ description = "Add .env support to your django/flask apps in development and dep
 name = "python-dotenv"
 optional = false
 python-versions = "*"
-version = "0.13.0"
+version = "0.14.0"
 
 [package.extras]
 cli = ["click (>=5.0)"]
@@ -782,7 +782,7 @@ wheel = "*"
 wsgi-request-logger = "*"
 
 [metadata]
-content-hash = "56c713a13fbedeb862368a7912dad0957c6b268d7993453d7fa035b5b4b4260d"
+content-hash = "8cd1a98fed016a5e646afc820c4810661c6d89fdea25dfbb929de38cca6a686b"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -1105,8 +1105,8 @@ python-dateutil = [
     {file = "python_dateutil-2.6.1-py2.py3-none-any.whl", hash = "sha256:95511bae634d69bc7329ba55e646499a842bc4ec342ad54a8cdb65645a0aad3c"},
 ]
 python-dotenv = [
-    {file = "python-dotenv-0.13.0.tar.gz", hash = "sha256:3b9909bc96b0edc6b01586e1eed05e71174ef4e04c71da5786370cebea53ad74"},
-    {file = "python_dotenv-0.13.0-py2.py3-none-any.whl", hash = "sha256:25c0ff1a3e12f4bde8d592cc254ab075cfe734fc5dd989036716fd17ee7e5ec7"},
+    {file = "python-dotenv-0.14.0.tar.gz", hash = "sha256:8c10c99a1b25d9a68058a1ad6f90381a62ba68230ca93966882a4dbc3bc9c33d"},
+    {file = "python_dotenv-0.14.0-py2.py3-none-any.whl", hash = "sha256:c10863aee750ad720f4f43436565e4c1698798d763b63234fb5021b6c616e423"},
 ]
 python-slugify = [
     {file = "python-slugify-1.2.4.tar.gz", hash = "sha256:57a385df7a1c6dbd15f7666eaff0ff29d3f60363b228b1197c5308ed3ba5f824"},
