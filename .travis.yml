@@ -13,7 +13,7 @@ before_script:
 
 script:
   - poetry run pyupgrade --py38-plus $(find . -name '*.py')
-  - poetry run isort --check-only
+  - poetry run isort . --check
   - poetry run black . --check
   - poetry run coverage run -m unittest
 
