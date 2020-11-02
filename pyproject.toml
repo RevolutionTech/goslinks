@@ -15,7 +15,7 @@ google-api-python-client = "^1.12"
 python-dotenv = "^0.15.0"
 Flask-Testing = "^0.8.0"
 flask-wtf = "^0.14.3"
-zappa = "^0.51.0"
+zappa = "^0.52.0"
 loginpass = "^0.5"
 
 [tool.poetry.dev-dependencies]

@@ -736,7 +736,7 @@ locale = ["Babel (>=1.3)"]
 
 [[package]]
 name = "zappa"
-version = "0.51.0"
+version = "0.52.0"
 description = "Server-less Python Web Services for AWS Lambda and API Gateway"
 category = "main"
 optional = false
@@ -751,7 +751,7 @@ hjson = "*"
 jmespath = "*"
 kappa = "0.6.0"
 pip-tools = "*"
-python-dateutil = "<2.7.0"
+python-dateutil = "*"
 python-slugify = "*"
 PyYAML = "*"
 requests = ">=2.20.0"
@@ -765,7 +765,7 @@ wsgi-request-logger = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "aff5a229afc28e83bb3f13403a38c445a9f994d4e52352a53406986c5edbbb2a"
+content-hash = "d0dfe4d20fe958e2f52e6327d54bce4e991511d690162d624e7813c8751c7f05"
 
 [metadata.files]
 appdirs = [
@@ -1222,6 +1222,6 @@ wtforms = [
     {file = "WTForms-2.2.1.tar.gz", hash = "sha256:0cdbac3e7f6878086c334aa25dc5a33869a3954e9d1e015130d65a69309b3b61"},
 ]
 zappa = [
-    {file = "zappa-0.51.0-py3-none-any.whl", hash = "sha256:c6e740334c1c39e644a345124b7317003420b632a8f7a6811d18b82bb16e2f8e"},
-    {file = "zappa-0.51.0.tar.gz", hash = "sha256:ccfc336d3bc48a6898cbbd157e16653f717dbe3ca37f933ce40acfe242a03a40"},
+    {file = "zappa-0.52.0-py3-none-any.whl", hash = "sha256:88f6ac15afcb8c159a87fa60b653995e73cd8a56e69a240446167a0ea2d7289f"},
+    {file = "zappa-0.52.0.tar.gz", hash = "sha256:d2693a1158d200518dfb1b5e8669a9db22ba559af430d00d1fd445fa4fcad7d6"},
 ]
