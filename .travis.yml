@@ -2,6 +2,8 @@ dist: xenial
 language: python
 python:
   - 3.8
+services:
+  - docker
 
 before_install:
   - pip install poetry
@@ -12,10 +14,14 @@ before_script:
   - cp .env-sample .env
 
 script:
-  - poetry run pyupgrade --py38-plus $(find . -name '*.py')
-  - poetry run isort . --check
-  - poetry run black . --check
+  - poetry run inv check.all
   - poetry run coverage run -m unittest
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+
+deploy:
+  provider: script
+  script: poetry run inv ci-deploy
+  on:
+    branch: master

@@ -26,17 +26,16 @@ With everything installed and all files in place, you may now create the databas
 
 ### Deployment
 
-Deployments are done using `zappa`. First, you will need to decrypt the `zappa_settings.json.enc` to `zappa_settings.json`:
+Goslinks is deployed as a `zappa` app on AWS Lambda. To modify the deployment settings, first you will need to decrypt `zappa_settings.json`:
 
-    openssl aes-256-cbc -k $DECRYPT_PASSWORD -in zappa_settings.json.enc -out zappa_settings.json -d
+    DECRYPT_PASSWORD=abc123 poetry run inv openssl.decrypt zappa_settings.json
 
-where `$DECRYPT_PASSWORD` contains the key that the settings were encrypted with. Then, use `zappa` to deploy to the production environment:
+where `DECRYPT_PASSWORD` is assigned to the key that the settings were encrypted with.
 
-    poetry run zappa deploy
+Then, generate a Docker container and run the container to execute zappa commands, such as `zappa update`:
 
-Once deployed, you will need to set environment variables on the generated Lambda, since `.env` is excluded from the package.
+    poetry run inv deploy
 
-If any changes to `zappa_settings.json` are made, the file should be re-encrypted before being committed. The following bash functions may be helpful for encrypting/decrypting:
+Once deployed, you will need to set environment variables on the generated Lambda. See `Config` for environment variables used in production. Once completed, the assigned URL should be running Goslinks.
 
-    function encrypt_openssl () { openssl aes-256-cbc -k $DECRYPT_PASSWORD -in "$1" -out "$1".enc; }
-    function decrypt_openssl () { openssl aes-256-cbc -k $DECRYPT_PASSWORD -in "$1".enc -out "$1" -d; }
+If any changes to `zappa_settings.json` are made, the file should be re-encrypted before being committed. You can use the `openssl` invoke tasks to do this.
