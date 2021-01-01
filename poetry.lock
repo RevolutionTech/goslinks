@@ -203,7 +203,7 @@ dotenv = ["python-dotenv"]
 
 [[package]]
 name = "flask-testing"
-version = "0.8.0"
+version = "0.8.1"
 description = "Unit testing for Flask"
 category = "main"
 optional = false
@@ -787,7 +787,7 @@ wsgi-request-logger = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "cb6cccceccf25b8259f4fb1726f979836d8b5b8aad6c5416a0f5c0bbf2b069a6"
+content-hash = "4a24bf99188e0707084902f663e6dd88bb2d7910f0c2776ac30896751075ff09"
 
 [metadata.files]
 appdirs = [
@@ -950,7 +950,7 @@ flask = [
     {file = "Flask-1.1.2.tar.gz", hash = "sha256:4efa1ae2d7c9865af48986de8aeb8504bf32c7f3d6fdc9353d34b21f4b127060"},
 ]
 flask-testing = [
-    {file = "Flask-Testing-0.8.0.tar.gz", hash = "sha256:d849bf53eb1ceb09dff6611888588cb60f20238058fb1ebcd917d69febc373e6"},
+    {file = "Flask-Testing-0.8.1.tar.gz", hash = "sha256:0a734d7b68e63a9410b413cd7b1f96456f9a858bd09a6222d465650cc782eb01"},
 ]
 flask-wtf = [
     {file = "Flask-WTF-0.14.3.tar.gz", hash = "sha256:d417e3a0008b5ba583da1763e4db0f55a1269d9dd91dcc3eb3c026d3c5dbd720"},
