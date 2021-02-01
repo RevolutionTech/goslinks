@@ -512,16 +512,14 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
 [[package]]
 name = "pynamodb"
-version = "4.3.3"
+version = "5.0.0"
 description = "A Pythonic Interface to DynamoDB"
 category = "main"
 optional = false
-python-versions = "*"
+python-versions = ">=3.6"
 
 [package.dependencies]
 botocore = ">=1.12.54"
-python-dateutil = ">=2.1,<3.0.0"
-six = "*"
 
 [package.extras]
 signals = ["blinker (>=1.3,<2.0)"]
@@ -787,7 +785,7 @@ wsgi-request-logger = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "6daf66a659913bcd17bb61b80b7c9c8c3a0ed5146aa3a1b6654652760ccbfa3e"
+content-hash = "19cc6a6ca2a0a147b7a4c7646fea909aca0733c9bd232a8831526eebca54b160"
 
 [metadata.files]
 appdirs = [
@@ -1146,8 +1144,8 @@ pycparser = [
     {file = "pycparser-2.19.tar.gz", hash = "sha256:a988718abfad80b6b157acce7bf130a30876d27603738ac39f140993246b25b3"},
 ]
 pynamodb = [
-    {file = "pynamodb-4.3.3-py2.py3-none-any.whl", hash = "sha256:739b3a02bb81f2739e8e7c0bb5174ec053a727c50295f6b20dfbab8cb953216a"},
-    {file = "pynamodb-4.3.3.tar.gz", hash = "sha256:ced47c200073dbbfafb10b26931b9c9bf3c6b898f41dffa3676f5c2e2eddc2f0"},
+    {file = "pynamodb-5.0.0-py3-none-any.whl", hash = "sha256:ef0af5503b9fefd1344ad827b0ced614cbe9f3a415dd0d8b6bbc4c9e92bb88f7"},
+    {file = "pynamodb-5.0.0.tar.gz", hash = "sha256:f0ab0809798eaedcb6ddd42e11d610e752abb1d29e5226844aacf9cbe9b72d54"},
 ]
 python-dateutil = [
     {file = "python-dateutil-2.6.1.tar.gz", hash = "sha256:891c38b2a02f5bb1be3e4793866c8df49c7d19baabf9c1bad62547e0b4866aca"},
