@@ -19,7 +19,7 @@ test = ["coverage", "flake8", "pexpect", "wheel"]
 
 [[package]]
 name = "authlib"
-version = "0.15.2"
+version = "0.15.3"
 description = "The ultimate Python library in building OAuth and OpenID Connect servers."
 category = "main"
 optional = false
@@ -799,8 +799,8 @@ argcomplete = [
     {file = "argcomplete-1.9.3.tar.gz", hash = "sha256:d97b7f3cfaa4e494ad59ed6d04c938fc5ed69b590bd8f53274e258fb1119bd1b"},
 ]
 authlib = [
-    {file = "Authlib-0.15.2-py2.py3-none-any.whl", hash = "sha256:078b900fa9fbebf9f8dae1d5dc1ca857b6a742493093ef9b0b36ad926f36e41f"},
-    {file = "Authlib-0.15.2.tar.gz", hash = "sha256:21b34625c83ca48150684bbeca8f7c884cd281913c72d146dbf0e9d2fbfdec4e"},
+    {file = "Authlib-0.15.3-py2.py3-none-any.whl", hash = "sha256:0f6af3a38d37dd77361808dd3f2e258b647668dac6d2cefcefc4c4ebc3c7d2b2"},
+    {file = "Authlib-0.15.3.tar.gz", hash = "sha256:7dde11ba45db51e97169c261362fab3193073100b7387e60c159db1eec470bbc"},
 ]
 black = [
     {file = "black-20.8b1.tar.gz", hash = "sha256:1c02557aa099101b9d21496f8a914e9ed2222ef70336404eeeac8edba836fbea"},
