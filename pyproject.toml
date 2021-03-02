@@ -19,7 +19,7 @@ zappa = "^0.52.0"
 loginpass = "^0.5"
 
 [tool.poetry.dev-dependencies]
-coverage = "^5.4"
+coverage = "^5.5"
 opstrich = "^0.3.1"
 
 [tool.isort]
