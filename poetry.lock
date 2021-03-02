@@ -272,7 +272,7 @@ uritemplate = ">=3.0.0,<4dev"
 
 [[package]]
 name = "google-auth"
-version = "1.24.0"
+version = "1.27.0"
 description = "Google Authentication Library"
 category = "main"
 optional = false
@@ -286,6 +286,7 @@ six = ">=1.9.0"
 
 [package.extras]
 aiohttp = ["aiohttp (>=3.6.2,<4.0.0dev)"]
+pyopenssl = ["pyopenssl (>=20.0.0)"]
 
 [[package]]
 name = "google-auth-httplib2"
@@ -796,7 +797,7 @@ wsgi-request-logger = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "19cc6a6ca2a0a147b7a4c7646fea909aca0733c9bd232a8831526eebca54b160"
+content-hash = "67d92f79c48970b8a4b8bb6523ce0ceffb6881782abe243e07a6abbdf233f1a6"
 
 [metadata.files]
 appdirs = [
@@ -969,8 +970,8 @@ google-api-python-client = [
     {file = "google_api_python_client-1.12.8-py2.py3-none-any.whl", hash = "sha256:3c4c4ca46b5c21196bec7ee93453443e477d82cbfa79234d1ce0645f81170eaf"},
 ]
 google-auth = [
-    {file = "google-auth-1.24.0.tar.gz", hash = "sha256:0b0e026b412a0ad096e753907559e4bdb180d9ba9f68dd9036164db4fdc4ad2e"},
-    {file = "google_auth-1.24.0-py2.py3-none-any.whl", hash = "sha256:ce752cc51c31f479dbf9928435ef4b07514b20261b021c7383bee4bda646acb8"},
+    {file = "google-auth-1.27.0.tar.gz", hash = "sha256:da5218cbf33b8461d7661d6b4ad91c12c0107e2767904d5e3ae6408031d5463e"},
+    {file = "google_auth-1.27.0-py2.py3-none-any.whl", hash = "sha256:d3640ea61ee025d5af00e3ffd82ba0a06dd99724adaf50bdd52f49daf29f3f65"},
 ]
 google-auth-httplib2 = [
     {file = "google-auth-httplib2-0.0.3.tar.gz", hash = "sha256:098fade613c25b4527b2c08fa42d11f3c2037dda8995d86de0745228e965d445"},
