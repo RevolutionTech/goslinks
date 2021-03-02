@@ -20,7 +20,7 @@ loginpass = "^0.5"
 
 [tool.poetry.dev-dependencies]
 coverage = "^5.4"
-opstrich = "^0.2.0"
+opstrich = "^0.3.1"
 
 [tool.isort]
 profile = "black"
