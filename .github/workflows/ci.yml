@@ -15,6 +15,7 @@ jobs:
       - run: cp .env-sample .env
       - run: poetry run inv check.all
       - run: poetry run coverage run -m unittest
+      - run: poetry run coverage xml
       - uses: codecov/codecov-action@v1.2.1
 
   deploy:
