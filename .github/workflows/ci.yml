@@ -1,0 +1,33 @@
+name: CI
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - run: pip install poetry
+      - run: poetry install
+
+      - run: cp .env-sample .env
+      - run: poetry run inv check.all
+      - run: poetry run coverage run -m unittest
+      - run: bash <(curl -s https://codecov.io/bash)
+
+  deploy:
+    runs-on: ubuntu-20.04
+    needs: test
+    environment: prod
+    if: github.ref == 'refs/heads/master'
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - run: pip install poetry
+      - run: poetry install
+
+      - run: poetry run inv ci-deploy
