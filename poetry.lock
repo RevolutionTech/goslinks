@@ -436,7 +436,7 @@ python-versions = "*"
 
 [[package]]
 name = "opstrich"
-version = "0.3.1"
+version = "0.4.0"
 description = "DevOps tooling, various scripts, etc."
 category = "dev"
 optional = false
@@ -797,7 +797,7 @@ wsgi-request-logger = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "face417bc7a4781bd0d257d15645aaf16dc910efd8b7a7c87fd3bf06ff1f9c6f"
+content-hash = "cb76e43b9870f3dbb3b5e4c29d4292f5d71455397fa963b6fb6fd846cc2dc474"
 
 [metadata.files]
 appdirs = [
@@ -1083,8 +1083,8 @@ mypy-extensions = [
     {file = "mypy_extensions-0.4.3.tar.gz", hash = "sha256:2d82818f5bb3e369420cb3c4060a7970edba416647068eb4c5343488a6c604a8"},
 ]
 opstrich = [
-    {file = "opstrich-0.3.1-py3-none-any.whl", hash = "sha256:f470ad67d71c98a5cadc2cd386bae1dad83c8641213dcc5cb1135e554701e0e9"},
-    {file = "opstrich-0.3.1.tar.gz", hash = "sha256:bb69509904be818e4096dc7f841b052e9920dd73c4e0e218eb83624ee16491be"},
+    {file = "opstrich-0.4.0-py3-none-any.whl", hash = "sha256:2add1d8a1515c8041b309579572337fd8b4759ca16221524497767924d06d990"},
+    {file = "opstrich-0.4.0.tar.gz", hash = "sha256:47aac7316b6e58ac3ff9f67c30533ef2744de1d5d422a13886b0aee000e4ad2e"},
 ]
 pathspec = [
     {file = "pathspec-0.8.1-py2.py3-none-any.whl", hash = "sha256:aa0cb481c4041bf52ffa7b0d8fa6cd3e88a2ca4879c533c9153882ee2556790d"},
