@@ -550,7 +550,7 @@ six = ">=1.5"
 
 [[package]]
 name = "python-dotenv"
-version = "0.16.0"
+version = "0.17.0"
 description = "Read key-value pairs from a .env file and set them as environment variables"
 category = "main"
 optional = false
@@ -798,7 +798,7 @@ wsgi-request-logger = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "c2d51b6889e1154a7be73653224873aa4812fed796f9eed28e41544be7a1c62c"
+content-hash = "ac4b3f3b751f3741153f1f64026e0f7b464304a5b265e0db8131f193b9d4145d"
 
 [metadata.files]
 appdirs = [
@@ -1164,8 +1164,8 @@ python-dateutil = [
     {file = "python_dateutil-2.6.1-py2.py3-none-any.whl", hash = "sha256:95511bae634d69bc7329ba55e646499a842bc4ec342ad54a8cdb65645a0aad3c"},
 ]
 python-dotenv = [
-    {file = "python-dotenv-0.16.0.tar.gz", hash = "sha256:9fa413c37d4652d3fa02fea0ff465c384f5db75eab259c4fc5d0c5b8bf20edd4"},
-    {file = "python_dotenv-0.16.0-py2.py3-none-any.whl", hash = "sha256:31d752f5b748f4e292448c9a0cac6a08ed5e6f4cefab85044462dcad56905cec"},
+    {file = "python-dotenv-0.17.0.tar.gz", hash = "sha256:471b782da0af10da1a80341e8438fca5fadeba2881c54360d5fd8d03d03a4f4a"},
+    {file = "python_dotenv-0.17.0-py2.py3-none-any.whl", hash = "sha256:49782a97c9d641e8a09ae1d9af0856cc587c8d2474919342d5104d85be9890b2"},
 ]
 python-slugify = [
     {file = "python-slugify-1.2.4.tar.gz", hash = "sha256:57a385df7a1c6dbd15f7666eaff0ff29d3f60363b228b1197c5308ed3ba5f824"},
