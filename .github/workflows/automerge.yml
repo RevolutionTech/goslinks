@@ -11,7 +11,7 @@ jobs:
   automerge:
     runs-on: ubuntu-20.04
     steps:
-      - uses: squalrus/merge-bot@v0.4.4
+      - uses: squalrus/merge-bot@v0.4.5
 
         # skip the automerge step if we don't have access to the AUTOMERGE_GITHUB_TOKEN
         # (ie. the workflow was not kicked off by a contributor)
