@@ -16,7 +16,7 @@ jobs:
       - run: poetry run inv check.all
       - run: poetry run coverage run -m unittest
       - run: poetry run coverage xml
-      - uses: codecov/codecov-action@v1.4.1
+      - uses: codecov/codecov-action@v1.5.2
 
   deploy:
     runs-on: ubuntu-20.04
