@@ -2,7 +2,7 @@
 #### URL shortener for teams
 
 ![CI](https://github.com/RevolutionTech/goslinks/actions/workflows/ci.yml/badge.svg)
-[![codecov](https://codecov.io/gh/RevolutionTech/goslinks/branch/master/graph/badge.svg)](https://codecov.io/gh/RevolutionTech/goslinks)
+[![codecov](https://codecov.io/gh/RevolutionTech/goslinks/branch/main/graph/badge.svg)](https://codecov.io/gh/RevolutionTech/goslinks)
 
 ## Setup
 
