@@ -1,6 +1,12 @@
 # Goslinks
 #### URL shortener for teams
 
+## Deprecated
+
+This project is no longer being maintained by the owner. Consider switching your team over to [GoLinks](https://www.golinks.io/).
+
+---
+
 ![CI](https://github.com/RevolutionTech/goslinks/actions/workflows/ci.yml/badge.svg)
 [![codecov](https://codecov.io/gh/RevolutionTech/goslinks/branch/main/graph/badge.svg)](https://codecov.io/gh/RevolutionTech/goslinks)
 
