@@ -23,19 +23,3 @@ Goslinks uses [python-dotenv](https://github.com/theskumar/python-dotenv) to rea
 With everything installed and all files in place, you may now create the database tables. You can do this with:
 
     poetry run flask migrate
-
-### Deployment
-
-Goslinks is deployed as a `zappa` app on AWS Lambda. To modify the deployment settings, first you will need to decrypt `zappa_settings.json`:
-
-    DECRYPT_PASSWORD=abc123 poetry run inv openssl.decrypt zappa_settings.json
-
-where `DECRYPT_PASSWORD` is assigned to the key that the settings were encrypted with.
-
-Then, generate a Docker container and run the container to execute zappa commands, such as `zappa update`:
-
-    poetry run inv deploy
-
-Once deployed, you will need to set environment variables on the generated Lambda. See `Config` for environment variables used in production. Once completed, the assigned URL should be running Goslinks.
-
-If any changes to `zappa_settings.json` are made, the file should be re-encrypted before being committed. You can use the `openssl` invoke tasks to do this.
